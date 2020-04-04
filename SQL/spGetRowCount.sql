@@ -3,6 +3,7 @@
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
+---- Server_1_Count Count Column Name in Exported file
 --- spGetRowCount 'Table1'
 CREATE PROCEDURE spGetRowCount
 	@TableName VARCHAR(500)
@@ -15,7 +16,7 @@ BEGIN
 			'SELECT
 				''' + s.name + ''' AS ''Schema'',
 				''' + t.name + ''' AS ''Table'',
-				COUNT(*) AS Count
+				COUNT(*) AS Server_1_Count
 				FROM ' + QUOTENAME(s.name) + '.' + QUOTENAME(t.name)
 		FROM sys.schemas s
 		INNER JOIN sys.tables t ON t.schema_id = s.schema_id
